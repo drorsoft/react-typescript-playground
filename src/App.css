@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
 }
 
@@ -19,7 +19,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-top: 100px;
+  justify-content: start;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -35,4 +36,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+.json-display {
+  text-align: start;
+  font-family: Consolas, serif;
 }

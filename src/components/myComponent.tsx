@@ -7,5 +7,8 @@ interface MyComponentProps {
 }
 
 export const MyComponent = (props: MyComponentProps) => {
-    return (<div> My component Renders!</div>)
+    const propsAsJson = JSON.stringify(props,null, "  ")
+    return (  <div className={'json-display'}>
+        <pre>{propsAsJson}</pre>
+    </div> )
 }

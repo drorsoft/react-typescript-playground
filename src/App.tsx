@@ -16,9 +16,9 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
           Edit the models and assign them as props to component.
         </p>
-
+        <MyComponent developer={developer} name={"Steve Jobs"}></MyComponent>
       </header>
-      <MyComponent developer={developer} name={"Steve Jobs"}></MyComponent>
+
     </div>
   );
 }
