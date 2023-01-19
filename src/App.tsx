@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {MyComponent} from "./components/myComponent";
+import {Developer, Orientation} from "./models/developer";
+
 
 function App() {
+  const developer : Developer = {
+    id: 1, orientation: Orientation.Whatever
+  }
   return (
     <div className="App">
       <header className="App-header">
         <img src={'logo-drorsoft.png'} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
+          Edit the models and assign them as props to component.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
       </header>
+      <MyComponent developer={developer} name={"Steve Jobs"}></MyComponent>
     </div>
   );
 }

@@ -1,11 +1,11 @@
-import {MyModel} from "../models/myModel";
+import {Developer} from "../models/developer";
 
 
 interface MyComponentProps {
    name: string;
-   model : MyModel
+   developer : Developer
 }
 
 export const MyComponent = (props: MyComponentProps) => {
-    return (<div> My component</div>)
+    return (<div> My component Renders!</div>)
 }
