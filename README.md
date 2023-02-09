@@ -1,6 +1,6 @@
-# React Typescript 
+# React Typescript
 
- 
+
 ## Intro
 
 This is a basic react-typescript setup created using
@@ -13,14 +13,13 @@ This is a basic react-typescript setup created using
 >   With name and date
 The way:
 1. build a typescript model (interface) in a `models` folder
-2. pass the interface to the child component
+2. (optional) build a typescript model for (interface) for data from the api
+3. pass the interface to the child component for rendering
 
- 
-.......
-api information : https://api.nasa.gov/#nasa-image-and-video-library
-...
-The images are on the links with {href : string, render: 'image'}
 
+ ___
+- api information : https://api.nasa.gov/#nasa-image-and-video-library  
+___
 ## For more info and links
 
 1. [CRA and Typescript](https://create-react-app.dev/docs/adding-typescript/
