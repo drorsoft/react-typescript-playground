@@ -8,3 +8,4 @@ export interface Developer {
     id : number;
     orientation : Orientation
 }
+
