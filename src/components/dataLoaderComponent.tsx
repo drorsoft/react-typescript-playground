@@ -6,10 +6,11 @@ const DEFALT_SEARCH = 'webb';
 
 //TODO:
 // Part A - Make the app show one image (the first one) from the NASA Api
-//    With name and date
+//    With title and date
 // The way:
-// 1. build a typescript model (interface) in the models folder
-// 2. pass the interface to the child component
+// 1. build a typescript model for (interface) for the props passed to NasaImage
+// 2. (optional) build a typescript model for (interface) for data from the api
+// 3. pass the interface to the child component
 // ........
 // ........
 // Part B - Make the app show multiple image (the first one) from the NASA Api
