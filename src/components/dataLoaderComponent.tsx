@@ -53,6 +53,7 @@ export const DataLoaderComponent = (props: any) => {
         fetch(`${API_URL}${DEFALT_SEARCH}`).then(res => (res.json().then(r => setSearchResults(r))))
     });
 
-    return (<NasaImageComponent></NasaImageComponent>)
+
+    return (searchResults ? <NasaImageComponent {...searchResultsToImage(searchResults)}></NasaImageComponent> : null)
 }
 
