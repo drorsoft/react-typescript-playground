@@ -1,4 +1,4 @@
-export const NasaImage = (props: any) => {
+export const NasaImageComponent = (props: any) => {
     return (<div>
     </div>)
 }

@@ -1,6 +1,5 @@
-export interface NasaImage {
-    name : string
+export interface NasaImage  {
+    title : string
     date : Date;
-    description : string
     imageUrl : string;
 }
