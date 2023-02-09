@@ -1,22 +1,19 @@
 import React from 'react';
 import './App.css';
-import {FatherComponent} from "./components/fatherComponent";
+import {DataLoaderComponent} from "./components/dataLoaderComponent";
 
 function App() {
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={'logo-drorsoft.png'} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-          Edit the models and assign them as props to component.
-        </p>
-     <FatherComponent></FatherComponent>
-      </header>
+    return (
+        <div className="App">
+            <header className="App-header">
+                <img src={'logo-drorsoft.png'} className="App-logo" alt="logo"/>
 
-    </div>
-  );
+                <DataLoaderComponent></DataLoaderComponent>
+            </header>
+
+        </div>
+    );
 }
 
 export default App;
