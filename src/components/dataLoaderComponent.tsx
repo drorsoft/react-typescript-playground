@@ -1,4 +1,4 @@
-import {  NasaImage} from "./nasaImage";
+import {  NasaImageComponent} from "./nasaImageComponent";
 import {useEffect, useState} from "react";
 
 const API_URL = 'https://images-api.nasa.gov/search?q='
@@ -25,5 +25,5 @@ export const DataLoaderComponent = (props: any) => {
        fetch(`${API_URL}${DEFALT_SEARCH}`).then(res=>(res.json().then(r=>  setSearchResults(r) )  ))
     });
     console.log(searchResults)
-    return ( <NasaImage></NasaImage>  )
+    return ( <NasaImageComponent></NasaImageComponent>  )
 }
