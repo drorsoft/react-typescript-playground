@@ -8,7 +8,6 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <img src={'logo-drorsoft.png'} className="App-logo" alt="logo"/>
-
                 <DataLoaderComponent></DataLoaderComponent>
             </header>
 

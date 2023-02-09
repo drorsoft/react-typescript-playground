@@ -4,7 +4,7 @@ import {NasaImage} from "../models/NasaImage";
 import {NasaImageComponent} from "./nasaImage";
 
 const API_URL = 'https://images-api.nasa.gov/search?q='
-const DEFALT_SEARCH = 'webb';
+const DEFALT_SEARCH = 'nova';
 
 interface Item {
     data: {
