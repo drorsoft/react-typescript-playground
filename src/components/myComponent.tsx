@@ -1,12 +1,5 @@
-import {Developer} from "../models/developer";
 
-
-interface MyComponentProps {
-   name: string;
-   developer : Developer
-}
-
-export const MyComponent = (props: MyComponentProps) => {
+export const MyComponent = (props: any) => {
     const propsAsJson = JSON.stringify(props,null, "  ")
     return (  <div className={'json-display'}>
         <pre>{propsAsJson}</pre>

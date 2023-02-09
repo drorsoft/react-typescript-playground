@@ -1,13 +1,9 @@
 import React from 'react';
 import './App.css';
-import {MyComponent} from "./components/myComponent";
-import {Developer, Orientation} from "./models/developer";
-
+import {FatherComponent} from "./components/fatherComponent";
 
 function App() {
-  const developer : Developer = {
-    id: 1, orientation: Orientation.Whatever
-  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +12,7 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
           Edit the models and assign them as props to component.
         </p>
-        <MyComponent developer={developer} name={"Steve Jobs"}></MyComponent>
+     <FatherComponent></FatherComponent>
       </header>
 
     </div>
