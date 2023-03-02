@@ -24,7 +24,7 @@ export const DataLoaderComponent = (props: any) => {
     const [ searchResults, setSearchResults ] :any= useState([])
     useEffect(  () => {
        fetch(`${API_URL}${DEFALT_SEARCH}`).then(res=>(res.json().then(r=>  setSearchResults(r) )  ))
-    });
+    },[]);
     console.log(searchResults)
     return ( <NasaImageComponent></NasaImageComponent>  )
 }
