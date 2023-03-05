@@ -5,7 +5,7 @@ import {NasaImageComponent} from "./nasaImage";
 
 
 const API_URL = 'https://images-api.nasa.gov/search?q='
-const DEFALT_SEARCH = 'nova';
+const DEFAULT_SEARCH = 'nova';
 
 
 interface Item {
@@ -51,7 +51,7 @@ const searchResultsToImage = (searchResults: NasaSearchResults): NasaImage => {
 export const DataLoaderComponent = (props: any) => {
     const [searchResults, setSearchResults] = useState<NasaSearchResults>()
     useEffect(() => {
-        fetch(`${API_URL}${DEFALT_SEARCH}`).then(res => (res.json().then(r => setSearchResults(r))))
+        fetch(`${API_URL}${DEFAULT_SEARCH}`).then(res => (res.json().then(r => setSearchResults(r))))
     },[]);
 
 
