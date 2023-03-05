@@ -5,7 +5,7 @@ import {UserChoiceEnum} from "../models/userChoice.enum";
 const buttonStyle: React.CSSProperties = {
     all: 'unset',
     margin: '20px',
-    padding: '8px',
+    padding: '8px 20px',
     fontSize : '18px',
     cursor: 'pointer',
     background : '#fd0083',
