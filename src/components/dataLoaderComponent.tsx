@@ -2,6 +2,7 @@
 import {useEffect, useState} from "react";
 import {NasaImage} from "../models/NasaImage";
 import {NasaImageComponent} from "./nasaImage";
+import {UserChoiceEnum} from "../models/userChoice.enum";
 
 
 const API_URL = 'https://images-api.nasa.gov/search?q='
@@ -49,12 +50,13 @@ const searchResultsToImage = (searchResults: NasaSearchResults): NasaImage => {
 }
 
 export const DataLoaderComponent = (props: any) => {
-    const [searchResults, setSearchResults] = useState<NasaSearchResults>()
+    const [searchResults, setSearchResults] = useState<NasaSearchResults>();
+    const userChoiceHandler = (choice : UserChoiceEnum) => {}
     useEffect(() => {
         fetch(`${API_URL}${DEFAULT_SEARCH}`).then(res => (res.json().then(r => setSearchResults(r))))
     },[]);
 
 
-    return (searchResults ? <NasaImageComponent {...searchResultsToImage(searchResults)}></NasaImageComponent> : null)
+    return (searchResults ? <NasaImageComponent clickHandler={userChoiceHandler} image={{...searchResultsToImage(searchResults)}}></NasaImageComponent> : null)
 }
 

@@ -1,5 +1,4 @@
 import {NasaImage} from "../models/NasaImage";
-import {Style} from "util";
 import React from "react";
 import {UserChoiceEnum} from "../models/userChoice.enum";
 
@@ -14,7 +13,7 @@ export interface NasaImageComponentProps {
 export const NasaImageComponent = (props: NasaImageComponentProps) => {
     const image = props.image;
     const buttonClick = (choice:UserChoiceEnum) =>{
-        props.  clickHandler(choice)
+        props.clickHandler(choice)
     }
 
     return (
@@ -22,7 +21,10 @@ export const NasaImageComponent = (props: NasaImageComponentProps) => {
         <div style={{display: 'flex', flexDirection : 'column'}}>
             <>
                 <div id={'buttons-container'}>
-                    <button style={{...buttonStyle}}></button>
+                    <button style={{...buttonStyle}} onClick={()=>buttonClick(UserChoiceEnum.First)}>First</button>
+                    <button style={{...buttonStyle}} onClick={()=>buttonClick(UserChoiceEnum.Random)}>Random</button>
+                    <button style={{...buttonStyle}} onClick={()=>buttonClick(UserChoiceEnum.Last)}>Last</button>
+
                 </div>
                 <h3>  {image.title}</h3>
                 <img src={image.imageUrl} alt={`${image.title}`}/>
