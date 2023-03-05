@@ -39,7 +39,7 @@ interface NasaSearchResults {
 
 
 
-const searchResultsToImage = (searchResults: NasaSearchResults): NasaImage => {
+const searchResultsToImage = (searchResults: NasaSearchResults, choice : UserChoiceEnum): NasaImage => {
     const firstItem: Item = searchResults.collection.items[0];
     const imageModel: NasaImage = {
         date: new Date(firstItem.data[0].date_created),
@@ -51,12 +51,13 @@ const searchResultsToImage = (searchResults: NasaSearchResults): NasaImage => {
 
 export const DataLoaderComponent = (props: any) => {
     const [searchResults, setSearchResults] = useState<NasaSearchResults>();
+    const [userChoice,setUserChoice] = useState<UserChoiceEnum>(UserChoiceEnum.First);
     const userChoiceHandler = (choice : UserChoiceEnum) => {}
     useEffect(() => {
         fetch(`${API_URL}${DEFAULT_SEARCH}`).then(res => (res.json().then(r => setSearchResults(r))))
     },[]);
+ const showImage : NasaImage | null =searchResults ? searchResultsToImage(searchResults, userChoice) : null
 
-
-    return (searchResults ? <NasaImageComponent clickHandler={userChoiceHandler} image={{...searchResultsToImage(searchResults)}}></NasaImageComponent> : null)
+    return (showImage ? <NasaImageComponent clickHandler={userChoiceHandler} image={showImage}></NasaImageComponent> : null)
 }
 
