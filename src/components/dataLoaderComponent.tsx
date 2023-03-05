@@ -23,7 +23,7 @@ interface NasaSearchResults {
 }
 
 const filterOnlyResultsWithImageLinks = (searchResults: NasaSearchResults) : NasaSearchResults=> {
-    searchResults.collection.items = searchResults.collection.items.filter(i=>i.links.length);
+    searchResults.collection.items = searchResults.collection.items.filter(i=>i.links?.length);
     return searchResults
 }
 //TODO (Exercise 2):
@@ -40,17 +40,15 @@ const filterOnlyResultsWithImageLinks = (searchResults: NasaSearchResults) : Nas
 
 const searchResultsToImage = (searchResults: NasaSearchResults, choice: UserChoiceEnum): NasaImage => {
     searchResults = filterOnlyResultsWithImageLinks(searchResults)
-    searchResults.collection.items = searchResults.collection.items.filter(i=>i.links);
 
     let itemNumber : number = 0;
     if (choice === UserChoiceEnum.Random){
-     //   itemNumber=  Math.floor(Math.random() * searchResults.collection.items.length)
+      itemNumber=  Math.floor(Math.random() * searchResults.collection.items.length)
     } else if (choice === UserChoiceEnum.Last) {
       itemNumber = searchResults.collection.items.length - 1
     }
-   console.log( searchResults.collection.items)
-   console.log( itemNumber)
-    const firstItem: Item = searchResults.collection.items[0];
+
+    const firstItem: Item = searchResults.collection.items[itemNumber];
     const imageModel: NasaImage = {
         date: new Date(firstItem.data[0].date_created),
         title: firstItem.data[0].title,
