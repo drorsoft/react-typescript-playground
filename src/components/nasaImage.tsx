@@ -6,7 +6,7 @@ export const NasaImageComponent = (props: NasaImage) => {
         <div style={{display: 'flex', flexDirection : 'column'}}>
             <>
                 <h3>  {props.title}</h3>
-                <img src={props.imageUrl}/>
+                <img src={props.imageUrl} alt={`${props.title}`}/>
                <h4> {props.date.toISOString()}</h4>
             </>
         </div>
