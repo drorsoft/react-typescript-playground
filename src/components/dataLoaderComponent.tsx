@@ -3,8 +3,10 @@ import {useEffect, useState} from "react";
 import {NasaImage} from "../models/NasaImage";
 import {NasaImageComponent} from "./nasaImage";
 
+
 const API_URL = 'https://images-api.nasa.gov/search?q='
 const DEFALT_SEARCH = 'nova';
+
 
 interface Item {
     data: {
@@ -19,6 +21,8 @@ interface NasaSearchResults {
         items: Item[];
     };
 }
+
+
 
 //TODO:
 // Part A - Make the app show one image (the first one) from the NASA Api
@@ -44,7 +48,6 @@ const searchResultsToImage = (searchResults: NasaSearchResults): NasaImage => {
         imageUrl: firstItem.links[0].href
     }
     return imageModel
-
 }
 
 export const DataLoaderComponent = (props: any) => {
