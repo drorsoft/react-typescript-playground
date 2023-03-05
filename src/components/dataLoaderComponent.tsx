@@ -23,6 +23,10 @@ interface NasaSearchResults {
 }
 
 
+const filterOnlyResultsWithImageLinks = (searchResults: NasaSearchResults) : NasaSearchResults=> {
+    searchResults.collection.items = searchResults.collection.items.filter(i=>i.links?.length);
+    return searchResults
+}
 
 
 //TODO (Exercise 2):
@@ -39,6 +43,8 @@ interface NasaSearchResults {
 
 
 const searchResultsToImage = (searchResults: NasaSearchResults): NasaImage => {
+    searchResults = filterOnlyResultsWithImageLinks(searchResults)
+
     const firstItem: Item = searchResults.collection.items[0];
     const imageModel: NasaImage = {
         date: new Date(firstItem.data[0].date_created),
