@@ -18,7 +18,7 @@ export interface NasaImageComponentProps {
     clickHandler: (choice: UserChoiceEnum) => void
 }
 
-function cloneAndAddFormatDate  <T extends {date : Date}>(obj : T)  {
+function cloneAndAddFormatDate  <T extends {date : Date}>(obj : T) : T & {formatDate : string} {
     const formatDate : string = obj.date.toLocaleDateString('IL', {formatMatcher : 'basic'})
     return {...obj,formatDate}
 }
@@ -41,7 +41,7 @@ export const NasaImageComponent = (props: NasaImageComponentProps) => {
                 </div>
                 <h3>  {image.title}</h3>
                 <img src={image.imageUrl} alt={`${image.title}`}/>
-                <h4> {image.date.toISOString()}</h4>
+                <h4> {image.formatDate}</h4>
             </>
         </div>
 
