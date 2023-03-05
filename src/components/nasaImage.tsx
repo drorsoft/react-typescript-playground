@@ -18,8 +18,13 @@ export interface NasaImageComponentProps {
     clickHandler: (choice: UserChoiceEnum) => void
 }
 
+function cloneAndAddFormatDate  <T extends {date : Date}>(obj : T)  {
+    const formatDate : string = obj.date.toLocaleDateString('IL', {formatMatcher : 'basic'})
+    return {...obj,formatDate}
+}
+
 export const NasaImageComponent = (props: NasaImageComponentProps) => {
-    const image = props.image;
+    const image = cloneAndAddFormatDate (props.image);
     const buttonClick = (choice: UserChoiceEnum) => {
         props.clickHandler(choice)
     }
